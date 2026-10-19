@@ -1,2 +1,31 @@
-# Project exclude paths
-/.gradle/
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+build/
+app/build/
+
+# Local configuration file (sdk.dir, etc.)
+local.properties
+
+# IDE files
+.idea/
+.gradle/
+*.iml
+.DS_Store
+*.hprof
+.cxx/
+captures/
+.externalNativeBuild/
+.kotlin/
