@@ -16,6 +16,7 @@ import com.styledrop.app.data.remote.ApiClient
 import com.styledrop.app.data.remote.AuthResponse
 import com.styledrop.app.data.remote.LoginRequest
 import com.styledrop.app.data.remote.RegisterRequest
+import com.styledrop.app.data.remote.FirebaseAuthHelper
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.util.UUID
@@ -102,9 +103,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             viewLifecycleOwner.lifecycleScope.launch {
                 try {
                     val response = if (isRegisterMode) {
-                        ApiClient.api.register(RegisterRequest(email, password, name))
+                        try {
+                            FirebaseAuthHelper.register(email, password, name)
+                        } catch (e: Exception) {
+                            ApiClient.api.register(RegisterRequest(email, password, name))
+                        }
                     } else {
-                        ApiClient.api.login(LoginRequest(email, password))
+                        try {
+                            FirebaseAuthHelper.login(email, password)
+                        } catch (e: Exception) {
+                            ApiClient.api.login(LoginRequest(email, password))
+                        }
                     }
                     authManager.saveSession(response)
                 } catch (e: Exception) {
@@ -123,6 +132,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         btnLogout.setOnClickListener {
             viewLifecycleOwner.lifecycleScope.launch {
+                FirebaseAuthHelper.signOut()
                 authManager.clearSession()
             }
         }

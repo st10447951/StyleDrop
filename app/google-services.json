@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "924299707118",
+    "project_id": "styledrop-8400c",
+    "storage_bucket": "styledrop-8400c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924299707118:android:66b608f60013e81855a9ff",
+        "android_client_info": {
+          "package_name": "com.styledrop.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9nlgHEnNUNhJyanyO0tn3p1bHBpS6GWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
