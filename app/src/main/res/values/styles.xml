@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.StyleDrop" parent="android:style/Theme.Material.NoActionBar">
+    <style name="Theme.StyleDrop" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">#0B0B0B</item>
