@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">StyleDrop</string>
+    <string name="home_title">STYLEDROP</string>
+    <string name="home_subtitle">Your style. Your wardrobe. Your drop.</string>
+    <string name="style_inspiration">Style inspiration</string>
+    <string name="style_inspiration_desc">Plan looks, catalogue your wardrobe and build your wishlist.</string>
+    <string name="featured_fashion_drops">Featured Fashion Drops</string>
+</resources>
