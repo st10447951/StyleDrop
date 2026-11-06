@@ -6,21 +6,18 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.styledrop.app.R
 import com.styledrop.app.data.remote.Channel3Product
 
 class ProductAdapter(
-    private var products: List<Channel3Product>,
     private val wishlistedIds: Set<String>,
-    private val onWishlistClick: (Channel3Product) -> Unit
-) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
-
-    fun updateData(newProducts: List<Channel3Product>) {
-        products = newProducts
-        notifyDataSetChanged()
-    }
+    private val onWishlistClick: (Channel3Product) -> Unit,
+    private val onItemClick: (Channel3Product) -> Unit
+) : ListAdapter<Channel3Product, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
 
     class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val ivProduct: ImageView = view.findViewById(R.id.iv_product)
@@ -36,7 +33,7 @@ class ProductAdapter(
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val product = products[position]
+        val product = getItem(position)
         holder.tvTitle.text = product.displayTitle
         holder.tvBrand.text = product.displayBrand
         holder.tvPrice.text = product.displayPriceRand
@@ -52,7 +49,19 @@ class ProductAdapter(
         holder.btnWishlist.setOnClickListener {
             onWishlistClick(product)
         }
+
+        holder.itemView.setOnClickListener {
+            onItemClick(product)
+        }
     }
 
-    override fun getItemCount(): Int = products.size
+    class ProductDiffCallback : DiffUtil.ItemCallback<Channel3Product>() {
+        override fun areItemsTheSame(oldItem: Channel3Product, newItem: Channel3Product): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: Channel3Product, newItem: Channel3Product): Boolean {
+            return oldItem == newItem
+        }
+    }
 }
