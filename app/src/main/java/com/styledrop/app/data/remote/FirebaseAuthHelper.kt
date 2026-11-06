@@ -8,7 +8,7 @@ object FirebaseAuthHelper {
     private val auth: FirebaseAuth? by lazy {
         try {
             FirebaseAuth.getInstance()
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             null
         }
     }
@@ -16,7 +16,7 @@ object FirebaseAuthHelper {
     private val firestore: FirebaseFirestore? by lazy {
         try {
             FirebaseFirestore.getInstance()
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             null
         }
     }
@@ -38,7 +38,7 @@ object FirebaseAuthHelper {
 
         val token = try {
             user.getIdToken(true).await().token ?: "firebase-token"
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             "firebase-token"
         }
 
@@ -66,7 +66,7 @@ object FirebaseAuthHelper {
 
         val token = try {
             user.getIdToken(true).await().token ?: "firebase-token"
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             "firebase-token"
         }
 

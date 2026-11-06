@@ -139,7 +139,7 @@ object Channel3FashionClient {
             } else {
                 service.searchProducts(apiKey, Channel3SearchRequest(query = query)).products ?: emptyList()
             }
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             // High resiliency fallback path for offline sandbox usage
             fallbackProducts.filter {
                 it.displayTitle.contains(query, ignoreCase = true) ||
