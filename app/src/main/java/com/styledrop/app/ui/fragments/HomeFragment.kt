@@ -28,7 +28,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         productAdapter = ProductAdapter(products, wishlistedIds) { product ->
-            product.id?.let { pid ->
+            product.id?.let {
                 toggleWishlist(product)
             }
         }

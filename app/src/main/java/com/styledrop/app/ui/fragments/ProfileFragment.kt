@@ -105,18 +105,18 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     val response = if (isRegisterMode) {
                         try {
                             FirebaseAuthHelper.register(email, password, name)
-                        } catch (e: Exception) {
+                        } catch (_: Exception) {
                             ApiClient.api.register(RegisterRequest(email, password, name))
                         }
                     } else {
                         try {
                             FirebaseAuthHelper.login(email, password)
-                        } catch (e: Exception) {
+                        } catch (_: Exception) {
                             ApiClient.api.login(LoginRequest(email, password))
                         }
                     }
                     authManager.saveSession(response)
-                } catch (e: Exception) {
+                } catch (_: Exception) {
                     val fallback = AuthResponse(
                         token = "sandbox-token",
                         userId = "usr-${UUID.randomUUID().toString().take(6)}",
