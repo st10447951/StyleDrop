@@ -1,4 +1,4 @@
-## StyleDrop 
+StyleDrop 
 StyleDrop is an Android clothing and streetwear application designed to help users discover clothing, manage a shopping cart, save items to a wishlist, and manage their profile and orders. The app uses a dark interface with bright pink accents for a modern streetwear-inspired look.
 Features
 - User authentication: Login, register, and Google sign-in interface.
@@ -12,7 +12,7 @@ Features
 Screenshots are under App view.
 
 
-## Installation (APK)
+ Installation (APK)
 1. Download the provided StyleDrop APK onto an Android device.
 2. Open the APK file.
 3. If prompted, allow installation from the source used to download the APK.
@@ -22,17 +22,17 @@ Note: Android may display a security warning when installing an APK outside the 
 or 
 open the APK folder and download the App
 
-## Requirements
+Requirements
 - Android device
 - Android version compatible with the APK
 - Internet connection for features that require online services
-## Project submission
+ Project submission
 This submission includes:
 - README.md – project overview, features, screenshots, and installation instructions.
 - screenshots/ – application screenshots.
 - StyleDrop.apk – Android application package (APK).
 
-## AI-Assisted Development
+ AI-Assisted Development
 
 During the development of StyleDrop, I used **Gemini AI integrated into Android Studio** as an AI development assistant to support the implementation and debugging of the application.
 
